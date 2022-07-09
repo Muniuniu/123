@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <title>报告内容</title>
+	</head>
+
+<body>
+    <div class="box1"  style="border: 5px;">
+        <article id="intro">
+            <h2 class="major">报告内容</h2>
+            <!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
+            <p>在本课程结业作业中，我构建的是一个关于本课程结业报告的静态网站，该网站包括报告内容、开发过程、问题的分析与解决和总结四个部分。</p>
+            <p>
+                在本次实验中，我设计的网站就是针对报告本身的展示和查看，首先进入主界面，是一个关于报告目录的导航栏，背景是图片的虚化设计和慢速显示，标题下方有本人的姓名和学号。
+                通过点击导航栏的按钮可以直接跳转到不同的报告界面查看，报告内容是对本实验的主要概述，开发过程中主要阐述本人的开发流程及主要代码的展示，问题的分析与解决这部分是针对开发中遇到的问题的描述及解决该问题的解决方法，
+                而总结这部分是对本次结业作业和本门课程的一个总结叙述。
+            </p>
+            <br>
+            <p>
+                在主界面中，首先通过nav标签定义了一个导航栏，并通过点击不同的导航格来跳转不同的HTML页面，主界面采用的是响应式布局，
+                首先先定义在标准浏览器下的固定宽度（假如标准浏览器的分辨率为1024px，那么我们设置宽为980px），然后用Media Query来监测浏览器的尺寸变化，当浏览器的分辨率小于1024px的时候，则通过Media Query预设的样式表来将页面的宽度设置为百分比显示，这样子页面的结构元素就会根据浏览器的的尺寸来进行相对应的调整。同理，当浏览器的可视区域改变到某个值（假如为650px）的时候，页面的结构元素根据Media Query预设的层叠样式表来进行相对应的调整。布局样式如下代码：
+                <pre>
+                    <code>
+                        @media screen and (max-width: 1680px) {
+
+                            #wrapper {
+                                padding: 3rem 2rem;
+                            }
+                
+                        }
+                
+                        @media screen and (max-width: 736px) {
+                
+                            #wrapper {
+                                padding: 2rem 1rem;
+                            }
+                
+                        }
+                
+                        @media screen and (max-width: 480px) {
+                
+                            #wrapper {
+                                padding: 1rem;
+                            }
+                
+                        }
+                    </code>
+                </pre>
+            </p>
+            <p>
+                主界面的外联样式css如下：
+            </p>
+            <pre>
+                <code>
+                    #main {
+                        -moz-flex-grow: 1;
+                        -webkit-flex-grow: 1;
+                        -ms-flex-grow: 1;
+                        flex-grow: 1;
+                        -moz-flex-shrink: 1;
+                        -webkit-flex-shrink: 1;
+                        -ms-flex-shrink: 1;
+                        flex-shrink: 1;
+                        display: -moz-flex;
+                        display: -webkit-flex;
+                        display: -ms-flex;
+                        display: flex;
+                        -moz-align-items: center;
+                        -webkit-align-items: center;
+                        -ms-align-items: center;
+                        align-items: center;
+                        -moz-justify-content: center;
+                        -webkit-justify-content: center;
+                        -ms-justify-content: center;
+                        justify-content: center;
+                        -moz-flex-direction: column;
+                        -webkit-flex-direction: column;
+                        -ms-flex-direction: column;
+                        flex-direction: column;
+                        position: relative;
+                        max-width: 100%;
+                        z-index: 3;
+                    }
+                </code>
+            </pre>
+        </article>
+    </div>
+</body>
+</html>

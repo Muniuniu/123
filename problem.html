@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <title>报告内容</title>
+	</head>
+
+<body>
+    <div class="box1"  style="border: 5px;">
+        <article id="about">
+            <h2 class="major">问题解决</h2>
+            <h3>页面的上边总是留出一段空白 </h3>
+            <p>
+                经过上网百度搜索才知道，body默认有个上边距，设置这个值的属性topmargin就可以设置页面的各边边距，以后需要记住。 <br/>
+                解决方案：设置：topmargin=”0″，相关的属性有：leftmargin、rightmargin、bottommargin。 
+            </p>
+            <h3>解决图像下方多出的3px问题</h3>
+            <p>
+                由于在引用MDB模板的时候，他默认是vertical-align，而在后续显示文本就会多出3px，
+                而这个产生的原因主要是由图片的垂直对齐方式vertical-align引发的，默认对齐方式为base-line；
+                解决方案：<br/>
+                1、将图片的垂直对齐方式vertical-align更改为 bottom；<br/>
+                2、将图片display设置为block，并且指定width 和  height；<br/>
+                3、设置图片所在的容器元素的width和height与图片一样。
+
+            </p>
+            <h3>如何将做的页面托管到平台上</h3>
+            <!-- <span class="image main"><img src="images/pic03.jpg" alt="" /></span> -->
+            <p>一开始在托管到github上时遇到了一些问题，最后解决方法如下：
+            <p>一、直接在网页打开github的主页
+                网址链接: <a herf="https://github.com/">github</a></p>
+            </p>
+            <p>
+                二、点击此处创建一个新的项目
+            </p>
+            <span class="image main"><img src="images\2.png" alt="" /></span>
+            <p>
+                三、起名字，并选择公开链接
+            </p>
+            <span class="image main"><img src="images\3.png" alt="" /></span>
+            <p>
+                四、因为我们已经在vs code上写好了代码，准备好了文件，所以直接进行上传文件
+            </p>
+            <span class="image main"><img src="images\4.png" alt="" /></span>
+            <p>
+                六、选择setting，并点击图片所画的部分
+            </p>
+            <span class="image main"><img src="images\5.png" alt="" /></span>
+            </article>
+    </div>
+</body>
+</html>

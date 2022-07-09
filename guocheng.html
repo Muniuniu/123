@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+        <title>报告内容</title>
+	</head>
+
+<body>
+    <div class="box1"  style="border: 5px;">
+        <article id="work">
+            <h2 class="major">开发过程</h2>
+            <!-- <span class="image main"><img src="images/pic02.jpg" alt="" /></span> -->
+            <h3>选择模板的思考过程</h3>
+            <p>由于我做的是一个比较简单的报告展示网页，所以就选择了MDB框架来进行设计。为了展示一个清楚明了的报告，需要将界面制作得简洁清楚，设定了导航栏便于更清楚地查看报告。为了网页美观度和方便观看，本网站运用了五个HTML文件，用跳转链接的方式将其联系起来。</p>
+            <h3>头部设计</h3>
+            <p>网页主页头部设计由导航条加上背景图组成。导航条可以快速锁定所需要的内容，是网页开发极其重要的内容。背景图明确网站主题。其中，导航条使用了一个< nav >标签，其内容包括三个部分，包括< a >超链接，来实现网页的快速跳转，按钮来实现点击，区块，用于放置各个导航超链接。
+                导航是便于浏览整个网页的很重要的部分，这部分的代码为
+            </p>
+                    <pre><code>
+&ltnav&gt
+&ltul&gt
+&ltli&gt&lta href="#intro"&gt报告内容&lt/a&gt&lt/li&gt
+&ltli&gt&lta href="#work"&gt开发过程&lt/a&gt&lt/li&gt
+&ltli&gt&lta href="#about"&gt问题分析与解决&lt/a&gt&lt/li&gt
+&ltli&gt&lta href="#contact"&gt总结&lt/a&gt&lt/li&gt
+&lt!--&ltli&gt&lta href="#elements"&gtElements&lt/a&gt&lt/li&gt--&gt
+&lt/ul&gt
+&lt/nav&gt
+                        </code>
+                    </pre>
+                
+                <h3>主页设计</h3>
+                <p>这部分主要包括报告标题，来源学校，学生姓名及学号等信息，还有指向其他报告界面的导航栏，主页面背景采用的是背景虚化和慢速显示，而标题则编写了一个小动画来突出标题，使得界面更加简洁和特别，而标题上方图标则来自于网上素材，这部分的代码如下：</p>
+                <p>
+                <pre>
+                    <code>
+                    #bg {
+                        -moz-transform: scale(1.0);
+                        -webkit-transform: scale(1.0);
+                        -ms-transform: scale(1.0);
+                        transform: scale(1.0);
+                        -webkit-backface-visibility: hidden;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100vh;
+                        z-index: 1;
+                    }
+                
+                        #bg:before, #bg:after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                        }
+                
+                        #bg:before {
+                            -moz-transition: background-color 2.5s ease-in-out;
+                            -webkit-transition: background-color 2.5s ease-in-out;
+                            -ms-transition: background-color 2.5s ease-in-out;
+                            transition: background-color 2.5s ease-in-out;
+                            -moz-transition-delay: 0.75s;
+                            -webkit-transition-delay: 0.75s;
+                            -ms-transition-delay: 0.75s;
+                            transition-delay: 0.75s;
+                            background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)),
+                             url("../../images/overlay.png");
+                            background-size: auto,
+                 256px 256px;
+                            background-position: center,
+                 center;
+                            background-repeat: no-repeat,
+                 repeat;
+                            z-index: 2;
+                        }
+                
+                        #bg:after {
+                            -moz-transform: scale(1.125);
+                            -webkit-transform: scale(1.125);
+                            -ms-transform: scale(1.125);
+                            transform: scale(1.125);
+                            -moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
+                            -webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
+                            -ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
+                            transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+                            background-image: url("../../images/bg.jpg");
+                            background-position: center;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            z-index: 1;
+                        }
+                
+                        body.is-article-visible #bg:after {
+                            -moz-transform: scale(1.0825);
+                            -webkit-transform: scale(1.0825);
+                            -ms-transform: scale(1.0825);
+                            transform: scale(1.0825);
+                            -moz-filter: blur(0.2rem);
+                            -webkit-filter: blur(0.2rem);
+                            -ms-filter: blur(0.2rem);
+                            filter: blur(0.2rem);
+                        }
+                
+                        body.is-preload #bg:before {
+                            background-color: #000000;
+                        }
+                    </code>
+                </pre>
+                </p>
+                <span class="image main"><img src="images\NR1LP9XX`P`73(_QL7XB@~I.png" alt="" /></span>
+                <p>
+                    而其他主页设计则相对简单，利用div标签和article标签来完成报告文字的展示，而代码的展示则是用pre标签标记，并将'<'改为& lt得以显示。
+                </p>
+                <h3>导航栏设计</h3>
+                <p>
+                    此部分仍然采用简约的设计，建立了四个导航格来进行点击，鼠标放上去会有阴影显示，具体实现过程见下部分代码：
+                </p>
+                <p>
+                    <pre>
+                        #header nav ul {
+                            display: -moz-flex;
+                            display: -webkit-flex;
+                            display: -ms-flex;
+                            display: flex;
+                            margin-bottom: 0;
+                            list-style: none;
+                            padding-left: 0;
+                            border: solid 1px #ffffff;
+                            border-radius: 4px;
+                        }
+                
+                            #header nav ul li {
+                                padding-left: 0;
+                                border-left: solid 1px #ffffff;
+                            }
+                
+                                #header nav ul li:first-child {
+                                    border-left: 0;
+                                }
+                
+                                #header nav ul li a {
+                                    display: block;
+                                    min-width: 7.5rem;
+                                    height: 2.75rem;
+                                    line-height: 2.75rem;
+                                    padding: 0 1.25rem 0 1.45rem;
+                                    text-transform: uppercase;
+                                    letter-spacing: 0.2rem;
+                                    font-size: 0.8rem;
+                                    border-bottom: 0;
+                                }
+                
+                                    #header nav ul li a:hover {
+                                        background-color: rgba(255, 255, 255, 0.075);
+                                    }
+                
+                                    #header nav ul li a:active {
+                                        background-color: rgba(255, 255, 255, 0.175);
+                                    }
+                
+                        #header nav.use-middle:after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: calc(50% - 1px);
+                            width: 1px;
+                            height: 100%;
+                            background: #ffffff;
+                        }
+                
+                        #header nav.use-middle ul li.is-middle {
+                            border-left: 0;
+                        }
+                
+                    </pre>
+                </p>
+        </article>
+    </div>
+</body>
+</html>
